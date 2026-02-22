@@ -1,0 +1,49 @@
+        body {
+            margin: 0px;
+            background-image: url('images/OrdersB.jpg');
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 738;
+            font-style: italic;
+            font-variation-settings: "width" 100;
+            background-size: cover;
+        }
+.Header {
+    font-size: 70px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+        
+.Header-Container{
+            display: flex;
+            padding: 10px 50px;
+            margin-left:33%;
+}
+.order-container{
+width: 700px;
+margin: 0 350px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+
+        .order-card {
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            background-color: #bca2e3;
+            border-radius: 20px;
+            padding: 10px 10px;
+            width: 310px;
+            padding: 20px;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+        }

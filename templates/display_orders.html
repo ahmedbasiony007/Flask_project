@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='DisplayOrdersStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="Header-Container">
+        <span class="Header">All Orders</span>
+    </div>
+    {% for o in orders %}
+    <div class="order-container">
+        <div class="order-card">
+            <div class="order-header">
+                #{{ o.order_id }} {{ o.order_date }}
+            </div>
+            <div class="order-body">
+                <div><b>Customer:</b> {{ o.customer_name }}</div>
+                <div><b>Product:</b> {{ o.product_name }}</div>
+            </div>
+            <div class="order-footer">
+                <div><b>Price:</b> {{ o.price }} EGP</div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lugx Store </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" />
+        <div class="header-links">
+            <a href="{{ url_for('home') }}">Home Page</a>
+            <a href="#">Our Products</a>
+            <a href="{{ url_for('display_orders') }}">All Orders</a>
+            <i class="ri-shopping-bag-line"></i>
+            {% if session.get('customer_id') %}
+            <span style="color:white;">Hi, {{ session.get('customer_name') }}</span>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- Landing Page -->
+
+    <div class="landing-page">
+        <div class="landing-page-text-container">
+            <span>Welcome to Lugx Store</span>
+            <h1>Best Store in Egypt</h1>
+            <P>
+                From next-generation smartphones to high-performance laptops and sleek tablets,
+                we deliver innovation at your fingertips.
+                Shop the newest technology, enjoy secure shopping,
+                and experience fast delivery — because you deserve the best
+            </P>
+            <div class="landing-page-search">
+                <input placeholder="Start Typing..." />
+                <button class="btn">Search</button>
+            </div>
+
+        </div>
+        <div class="landing-page-image-container">
+            <img src="{{ url_for('static', filename='images/home page Photo.jpg') }}">
+        </div>
+    </div>
+
+
+    <!--Trending Products -->
+    <div class="Trending-container">
+        <span>Trending</span>
+        <div class="TrendingHeader">
+            <h1>Trending Products</h1>
+            <button class="btn"> view all</button>
+        </div>
+        <!--Trending Cards-->
+        <div class="Trending-card-container">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/T1.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Laptops</p>
+                        <h3>Dell XPS 13</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="101">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/iphone 14.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Mobile Phones</p>
+                        <h3>Appel 14 Pro</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="102">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img class="s" src="{{ url_for('static', filename='images/samsung-55.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>TVs</p>
+                        <h3>Samsung-55</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="103">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img class="s" src="{{ url_for('static', filename='images/Mouse.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Mouse</p>
+                        <h3> Spirit Of Gamer</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="104">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Most Popular -->
+    <div class="Trending-container">
+        <span>Most Popular</span>
+        <div class="TrendingHeader">
+            <h1>Best Items</h1>
+            <button class="btn"> view all</button>
+        </div>
+        <!--Most Popular Cards-->
+        <div class="Trending-card-container">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/Keyboard.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Printers</p>
+                        <h3>HP LaserJet</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="106">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/Printer.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Printers</p>
+                        <h3>HP LaserJet</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="106">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img class="s" src="{{ url_for('static', filename='images/External driver.jpg') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Drivers</p>
+                        <h3>Ext Driver 1TB</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="107">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img class="s" src="{{ url_for('static', filename='images/Headset.png') }}" />
+                <div class="card-info">
+                    <div class="card-name">
+                        <p>Headsets</p>
+                        <h3> Gaming Headset</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('add_order') }}">
+                        <input type="hidden" name="product_id" value="108">
+                        <button type="submit" class="cart-btn">
+                            <img src="{{ url_for('static', filename='images/online-shopping.png') }}">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

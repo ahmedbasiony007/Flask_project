@@ -1,0 +1,68 @@
+        body{
+            margin: 0px;
+            background-image: url('images/Login.jpg');
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 738;
+            font-style: italic;
+            font-variation-settings:"width" 100;
+            background-size: cover;
+            }
+
+.Login-card-Container{
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 600px;
+    height: 250px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login span{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.login button{
+    color: rgb(255, 255, 255);
+    background-color:rgb(21, 0, 255);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    height: 30px;
+    padding:0 10px;
+    font-size: 25px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+}
+
+.login input{
+    border-radius: 50px;
+    height: 30px;
+    padding:0 10px;
+    font-size: medium;
+    width: 200px;
+    height: 50px;
+}
+
+.login button:hover{
+    background-color: #63c1f8;
+}
+
+
